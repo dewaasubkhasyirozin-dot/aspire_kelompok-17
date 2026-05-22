@@ -49,7 +49,7 @@ function savedReducer(state: SavedState, action: SavedAction): SavedState {
 
 interface SavedContextType extends SavedState {
   saveOpportunity: (opportunityId: string, status?: SavedStatus) => Promise<void>;
-  updateSavedItem: (id: string, data: { status?: SavedStatus; notes?: string }) => Promise<void>;
+  updateSavedItem: (id: string, data: { status?: SavedStatus; notes?: string; reminder_date?: string }) => Promise<void>;
   removeSavedItem: (id: string) => Promise<void>;
   isOpportunitySaved: (opportunityId: string) => boolean;
   getSavedItem: (opportunityId: string) => UserSavedOpportunity | undefined;
@@ -85,7 +85,7 @@ export function SavedProvider({ children }: { children: React.ReactNode }) {
     dispatch({ type: "ADD_ITEM", payload: data as UserSavedOpportunity });
   }, [supabase]);
 
-  const updateSavedItem = useCallback(async (id: string, data: { status?: SavedStatus; notes?: string }) => {
+  const updateSavedItem = useCallback(async (id: string, data: { status?: SavedStatus; notes?: string; reminder_date?: string }) => {
     dispatch({ type: "UPDATE_ITEM", payload: { id, ...data } });
     const { error } = await supabase.from("user_saved_opportunities").update(data).eq("id", id);
     if (error) toast.error("Gagal mengupdate");

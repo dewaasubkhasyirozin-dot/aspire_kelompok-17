@@ -153,7 +153,7 @@ export function OpportunityDetail({ opportunity }: OpportunityDetailProps) {
                     <p className="text-xs text-gray-500 font-medium">Link Terkait</p>
                     {opportunity.guidebook_link && <a href={opportunity.guidebook_link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-primary-600 hover:text-primary-700"><FileText size={14} /> Guidebook</a>}
                     {opportunity.organizer_socials?.website && <a href={opportunity.organizer_socials.website} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-primary-600 hover:text-primary-700"><Globe size={14} /> Website Resmi</a>}
-                    {opportunity.organizer_socials?.Camera && <a href={opportunity.organizer_socials.Camera} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-primary-600 hover:text-primary-700"><Camera size={14} /> Camera</a>}
+                    {opportunity.organizer_socials?.instagram && <a href={opportunity.organizer_socials.instagram} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-primary-600 hover:text-primary-700"><Camera size={14} /> Instagram</a>}
                     {opportunity.organizer_socials?.email && <a href={`mailto:${opportunity.organizer_socials.email}`} className="flex items-center gap-2 text-sm text-primary-600 hover:text-primary-700"><Mail size={14} /> Email</a>}
                   </div>
                 </>

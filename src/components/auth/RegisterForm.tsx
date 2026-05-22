@@ -58,7 +58,7 @@ export function RegisterForm() {
         <Input label="Password" type="password" placeholder="Minimal 6 karakter" leftIcon={<Lock size={18} />} error={errors.password?.message} {...register("password")} />
         <Input label="Konfirmasi Password" type="password" placeholder="Ulangi password" leftIcon={<Lock size={18} />} error={errors.confirm_password?.message} {...register("confirm_password")} />
       </div>
-      <Select label="Jenjang Pendidikan" options={EDUCATION_LEVELS.map((level) => ({ value: level, label: level }))} placeholder="Pilih jenjang pendidikan" error={errors.education_level?.message} {...register("education_level")} />
+      <Select label="Jenjang Pendidikan" options={EDUCATION_LEVELS.map((level) => ({ value: level, label: level }))} placeholder="Pilih jenjang pendidikan" error={errors.education_level?.message as string} {...register("education_level")} />
 
       <div>
         <label className="block text-sm font-semibold text-gray-700 mb-2">Minat / Bidang (opsional)</label>
